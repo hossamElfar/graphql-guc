@@ -99,14 +99,13 @@ $ open http://localhost:8080/playground
 To run the app in a dockerized envoriment run the following commands.
 
 ```bash
-$ docker build . -t graphql_guc
-$ docker run -p 8080:8080 --name=graphql_guc graphql_guc
+$ docker-compose up -d
 ```
 
 To log into the running conatiner 
 
 ```bash
-$ docker exec -i -t graphql_guc bash
+$ docker-compose exec backend bash
 ``` 
 
 The `Dockerfile` in this repo is customized to run in a production level which means the enviroment 

@@ -16,7 +16,7 @@ ADD package.json yarn.lock /app/
 RUN yarn --pure-lockfile
 
 # copy all file from current dir to /app in container
-COPY . /app/
+COPY . /app
 
 # run the app using pm2 
 RUN npm install pm2 -g
@@ -24,5 +24,5 @@ RUN npm install pm2 -g
 # expose port 8080
 EXPOSE 8080
 
-# cmd to start service
-CMD ["pm2-docker", "index.js", "-i", "4"]
+# # cmd to start service
+# CMD ["pm2-docker", "index.js", "-i", "4"]

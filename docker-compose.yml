@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  backend:
+    build: .
+    command: pm2-docker index.js --watch -i 4
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app  
