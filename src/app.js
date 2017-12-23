@@ -39,6 +39,7 @@ app.get('/', (req, res) => res.redirect('/playground'));
 
 app.get('*', (req, res) => res.status(404).send(get404HTML()));
 
-app.server.listen(process.env.PORT || config.server.port);
-// eslint-disable-next-line no-console
-console.log(`🚀  Server listening on port ${app.server.address().port}...`);
+app.server.listen(process.env.PORT || config.server.port, () => {
+  // eslint-disable-next-line no-console
+  console.log(`🚀  Server listening on port ${app.server.address().port}...`);
+});

@@ -95,6 +95,24 @@ $ yarn dev
 $ open http://localhost:8080/playground
 ```
 
+## Docker support
+To run the app in a dockerized envoriment run the following commands.
+
+```bash
+$ docker build . -t graphql_guc
+$ docker run -p 8080:8080 --name=graphql_guc graphql_guc
+```
+
+To log into the running conatiner 
+
+```bash
+$ docker exec -i -t graphql_guc bash
+``` 
+
+The `Dockerfile` in this repo is customized to run in a production level which means the enviroment 
+will handle the load balancing and self-healing if a cluster crashes. It uses [pm2](https://github.com/Unitech/pm2)
+to automate the common system admin tasks and system monitoring.
+
 ## Thanks
 
 * [Nabila Ahmed](https://github.com/Nabila63Ahmed), for her early adoption of the idea & help with coding a previous version of the project.
